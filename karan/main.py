@@ -58,6 +58,7 @@ for epoch in range(epochs):
               accuracy_fn,
               device)
 print("Finished Training")
+torch.save(model.state_dict(), "model.pth")
 print("")
 print("Model Evaluation")
 print(evaluate(model, test_data_loader, loss_fn, accuracy_fn,device))
