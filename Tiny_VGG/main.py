@@ -4,14 +4,14 @@ from test import test_step
 from tiny_VGG import FashionMNISTModelV2
 from torchvision import datasets
 import torchvision
-from karan.eval import evaluate
+from Tiny_VGG.eval import evaluate
 from torch.utils.data import DataLoader
 from torch import nn
-from karan.accuracy_fn import accuracy_fn
+from Tiny_VGG.accuracy_fn import accuracy_fn
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 train_data = datasets.FashionMNIST(
-    root='data',
+    root='../data',
     train=True,
     download=True,
     transform=torchvision.transforms.ToTensor(),
@@ -19,7 +19,7 @@ train_data = datasets.FashionMNIST(
 )
 
 test_data = datasets.FashionMNIST(
-    root='data',
+    root='../data',
     train=False,
     download=True,
     transform=torchvision.transforms.ToTensor(),
